@@ -19,7 +19,6 @@ function loadEventListeners() {
   filter.addEventListener('keyup', filterTasks);
 }
 
-
 function getTasks() {
   let tasks;
   if(localStorage.getItem('tasks') === null){
@@ -47,7 +46,6 @@ function getTasks() {
     taskList.appendChild(li);
   });
 }
-
 
 function addTask(e) {
   if(taskInput.value === '') {
@@ -79,7 +77,6 @@ function addTask(e) {
   e.preventDefault();
 }
 
-
 function storeTaskInLocalStorage(task) {
   let tasks;
   if(localStorage.getItem('tasks') === null){
@@ -93,7 +90,6 @@ function storeTaskInLocalStorage(task) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-
 function removeTask(e) {
 
   if(e.target.parentElement.classList.contains('delete-item')) {
@@ -106,7 +102,6 @@ function removeTask(e) {
     }
   }
 }
-
 
 function removeTaskFromLocalStorage(taskItem) {
   let tasks;
@@ -126,7 +121,6 @@ function removeTaskFromLocalStorage(taskItem) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-
 function clearTasks() {
   while(taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
@@ -135,11 +129,9 @@ function clearTasks() {
   clearTasksFromLocalStorage();
 }
 
-
 function clearTasksFromLocalStorage() {
   localStorage.clear();
 }
-
 
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
